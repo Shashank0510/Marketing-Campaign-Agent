@@ -21,9 +21,6 @@ from marketing_campaign_agent.instructions import (
     VISUAL_SUGGESTER_INSTRUCTION,
     FORMATTER_INSTRUCTION,
     CAMPAIGN_ORCHESTRATOR_INSTRUCTION,
-    VISUAL_GENERATION_INSTRUCTION
-    
-
 )
 
 market_research_agent = LlmAgent (
@@ -63,14 +60,6 @@ formatter_agent = LlmAgent(
     output_key="final_campaign_brief" 
 )
 
-visual_image_agent = LlmAgent (
-    name = "VisualGenerator",
-    model = 'gemini-2.5-flash-image',
-    instruction = VISUAL_GENERATION_INSTRUCTION,
-    output_key = "final_image"
-)
-
-
 campagin_orchestrator = SequentialAgent(
     name = "MarketingCampaginAssistant",
     description = CAMPAIGN_ORCHESTRATOR_INSTRUCTION,
@@ -79,8 +68,7 @@ campagin_orchestrator = SequentialAgent(
         messaging_strategist_agent,
         ad_copy_writer_agent,
         visual_suggester_agent,
-        formatter_agent,
-        visual_image_agent 
+        formatter_agent
     ]
 )
 
