@@ -17,7 +17,6 @@ The **Marketing Campaign Assistant** operates as a `SequentialAgent` pipeline. I
 | **Ad Copy Writer** | Drafts creative variations for various platforms. | `ad_copy_variations` |
 | **Visual Suggester** | Conceptualizes the aesthetic and imagery themes. | `visual_concepts` |
 | **Campaign Formatter** | Compiles all data into a professional, structured brief. | `final_campaign_brief` |
-| **Visual Generator** | Uses specialized image models to create the final asset. | `final_image` |
 
 ---
 
@@ -63,7 +62,7 @@ The system follows a linear "waterfall" logic where each agent's output informs 
 2. **Strategy**: The data is passed to the `MessagingStrategist` to find the "hook."
 3. **Creation**: Copy and Visual concepts are generated based on the strategy.
 4. **Formatting**: The `CampaignBriefFormatter` cleans the text for human consumption.
-5. **Imaging**: The `VisualGenerator` (utilizing the `gemini-2.5-flash-image` model) produces the actual creative asset.
+
 
 ---
 
@@ -76,7 +75,7 @@ To execute the agent, you can call the `root_agent` (the orchestrator) with your
 result = root_agent.run("Launch a sustainable bamboo toothbrush brand for Gen Z.")
 
 print(result.final_campaign_brief)
-# Access the generated image via result.final_image
+
 
 ```
 
