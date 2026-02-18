@@ -83,19 +83,6 @@ Output:
 Output ONLY the final, complete marketing campaign brief in Markdown format. Don't include any other text or comments. Don't include backticks. It will be rendered as Markdown.
 """
 
-VISUAL_GENERATION_INSTRUCTION = '''
-You are the Visual Generation Agent. Your task is to generate visuals based on the visual suggestions provided.
-
-Input:
-Detailed descriptions of visual concepts: state['visual_concepts']
-
-Output:
-Only a single visual, for marketing purpose. Don't include any other text or comments.
-
-'''
-
-
-
 CAMPAIGN_ORCHESTRATOR_INSTRUCTION = """
 You are the Marketing Campaign Assistant. Your primary function is to guide the user through the process of creating a comprehensive marketing campaign brief for a new product idea. You will coordinate specialized sub-agents to handle different aspects of the brief creation, including market research, messaging, ad copy, and visual concepts.
 """
